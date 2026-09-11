@@ -55,11 +55,11 @@ export const projects: Project[] = [
   },
   {
     name: "CreateFlow AI",
-    role: "Full-Stack Developer & Contributor",
+    role: "Full-Stack Developer (Solo)",
     blurb:
       "A lightweight AI content-creation workspace for turning a short brief into a useful first draft — generating emails, blog posts, social copy, product descriptions, code, and images through a clean multi-page interface with a prompt library and generation history.",
     contributions:
-      "Contributed to the generation workflows and app experience — building dynamic input forms with validation and loading states, the prompt library and prefill flow, and browser-local generation history, backed by secure server-side AI calls so provider credentials stay off the client.",
+      "Designed and built CreateFlow AI end-to-end as an individual project — the full generation workflows, dynamic input forms with validation and loading states, the prompt library and prefill flow, and browser-local generation history, all backed by secure server-side AI calls so provider credentials stay off the client.",
     tech: ["React 19", "TypeScript", "Node.js", "Express", "tRPC 11", "Tailwind CSS 4"],
     repo: "https://github.com/sibusisomakaula/createflow-ai",
     demo: "https://createflow-gdbcdt94.manus.space",
@@ -91,25 +91,83 @@ export const projects: Project[] = [
 export type Certificate = {
   name: string
   issuer: string
-  // Replace the placeholder image at this path with the actual certificate scan/screenshot.
   image: string
+  // External verification link (Coursera verify URL) when available, otherwise the image itself.
   credentialUrl: string
 }
 
-export const certificates: Certificate[] = [
-  {
-    name: "Google AI Essentials",
-    issuer: "Google",
-    image: "/certificates/google-ai-essentials.png",
-    credentialUrl: "#",
-  },
-  {
-    name: "Artificial Intelligence Bootcamp (AI)",
-    issuer: "AI Bootcamp",
-    image: "/certificates/ai-bootcamp.png",
-    credentialUrl: "#",
-  },
-]
+// Featured specialization certificate.
+export const featuredCertificate: Certificate = {
+  name: "Google AI Essentials",
+  issuer: "Google · Specialization (5 courses)",
+  image: "/certificates/google-ai-essentials.png",
+  credentialUrl: "/certificates/google-ai-essentials.png",
+}
+
+export type CertificateProgram = {
+  name: string
+  issuer: string
+  description: string
+  courses: Certificate[]
+}
+
+// Artificial Intelligence Bootcamp — the individual course certificates earned through the programme.
+export const bootcamp: CertificateProgram = {
+  name: "Artificial Intelligence Bootcamp",
+  issuer: "AI Bootcamp · Coursera",
+  description:
+    "A multi-course AI programme completed through Coursera — spanning foundational AI, Python for data science, supervised and unsupervised machine learning, and generative AI with large language models.",
+  courses: [
+    {
+      name: "AI For Everyone",
+      issuer: "DeepLearning.AI",
+      image: "/certificates/ai-for-everyone.png",
+      credentialUrl: "https://coursera.org/verify/VZ3QG2DG35R1",
+    },
+    {
+      name: "Introduction to Artificial Intelligence (AI)",
+      issuer: "IBM",
+      image: "/certificates/intro-to-ai.png",
+      credentialUrl: "https://coursera.org/verify/9VC4GNAECWYN",
+    },
+    {
+      name: "Python for Data Science, AI & Development",
+      issuer: "IBM",
+      image: "/certificates/python-data-science.png",
+      credentialUrl: "https://coursera.org/verify/IV33MTBHX1WB",
+    },
+    {
+      name: "Introduction to Generative AI",
+      issuer: "Google Cloud",
+      image: "/certificates/intro-generative-ai.png",
+      credentialUrl: "https://coursera.org/verify/VZ98EQASMSAM",
+    },
+    {
+      name: "Generative AI: Prompt Engineering Basics",
+      issuer: "IBM",
+      image: "/certificates/prompt-engineering.png",
+      credentialUrl: "https://coursera.org/verify/PUG918VSD8BI",
+    },
+    {
+      name: "Supervised Machine Learning: Regression and Classification",
+      issuer: "DeepLearning.AI · Stanford Online",
+      image: "/certificates/supervised-ml.png",
+      credentialUrl: "https://coursera.org/verify/GOW5MD60U3VH",
+    },
+    {
+      name: "Unsupervised Learning, Recommenders, Reinforcement Learning",
+      issuer: "DeepLearning.AI · Stanford Online",
+      image: "/certificates/unsupervised-ml.png",
+      credentialUrl: "https://coursera.org/verify/DNW3TRP5CCJX",
+    },
+    {
+      name: "Generative AI with Large Language Models",
+      issuer: "DeepLearning.AI · AWS",
+      image: "/certificates/genai-llms.png",
+      credentialUrl: "https://coursera.org/verify/UX4D97F2IAKC",
+    },
+  ],
+}
 
 export type EducationItem = {
   qualification: string
