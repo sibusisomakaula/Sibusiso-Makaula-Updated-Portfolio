@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowUpRight, Mail, MapPin } from "lucide-react"
+import { ArrowUpRight, Download, FileText, Mail, MapPin } from "lucide-react"
 import { GithubIcon, LinkedinIcon } from "@/components/brand-icons"
 import { profile } from "@/lib/portfolio-data"
 
@@ -62,6 +62,14 @@ export function Hero() {
               <Mail className="h-4 w-4" />
               Get in touch
             </a>
+            <a
+              href="/Sibusiso_Makaula_ICT_Graduate_CV.pdf"
+              download
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card/60 px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-accent"
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-sm text-muted-foreground">
@@ -86,6 +94,14 @@ export function Hero() {
             >
               <LinkedinIcon className="h-4 w-4 text-primary" />
               LinkedIn
+            </a>
+            <a
+              href="/Sibusiso_Makaula_ICT_Graduate_CV.pdf"
+              download
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+            >
+              <FileText className="h-4 w-4 text-primary" />
+              CV (PDF)
             </a>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react"
+import { FileText, Mail, MapPin, Phone } from "lucide-react"
 import { GithubIcon, LinkedinIcon } from "@/components/brand-icons"
 import { profile } from "@/lib/portfolio-data"
 
@@ -57,6 +57,14 @@ export function ContactFooter() {
             >
               <LinkedinIcon className="h-4 w-4 text-primary" />
               LinkedIn
+            </a>
+            <a
+              href="/Sibusiso_Makaula_ICT_Graduate_CV.pdf"
+              download
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+            >
+              <FileText className="h-4 w-4 text-primary" />
+              CV (PDF)
             </a>
           </div>
         </div>
