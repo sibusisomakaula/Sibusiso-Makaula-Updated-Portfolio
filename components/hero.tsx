@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ArrowUpRight, Mail, MapPin } from "lucide-react"
 import { GithubIcon, LinkedinIcon } from "@/components/brand-icons"
 import { profile } from "@/lib/portfolio-data"
@@ -25,7 +26,7 @@ export function Hero() {
         }}
       />
 
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.4fr_1fr]">
         <div className="flex flex-col items-start gap-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-medium text-muted-foreground">
             <span className="relative flex h-2 w-2">
@@ -86,6 +87,28 @@ export function Hero() {
               <LinkedinIcon className="h-4 w-4 text-primary" />
               LinkedIn
             </a>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-sm lg:mx-0">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-4 -z-10 rounded-3xl opacity-40 blur-2xl"
+            style={{
+              background:
+                "radial-gradient(closest-side, var(--color-accent-glow), transparent)",
+            }}
+          />
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+            <Image
+              src="/sibusiso-makaula.png"
+              alt={`Portrait of ${profile.name}`}
+              width={800}
+              height={800}
+              priority
+              className="h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
           </div>
         </div>
       </div>
